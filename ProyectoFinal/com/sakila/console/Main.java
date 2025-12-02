@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) {
         ConnectionProvider provider = new ConnectionProvider(
-            System.getenv().getOrDefault("SAKILA_URL", "jdbc:mysql//localhost:3306/sakila" /*"jdbc:mysql://localhost:3306/sakila?useSSL=false&serverTimezone=UTC"*/),
-            System.getenv().getOrDefault("SAKILA_USER", "TonyMej4289"/*"root"*/),
-            System.getenv().getOrDefault("SAKILA_PASS", "!qcL4EJ$dRdc#aq9E!zC" /*"root"*/)
+            System.getenv().getOrDefault("SAKILA_URL", "jdbc:mysql://localhost:3306/sakila?useSSL=false&serverTimezone=UTC"),
+            System.getenv().getOrDefault("SAKILA_USER", "Tu user"),
+            System.getenv().getOrDefault("SAKILA_PASS", "Tu pass")
         );
         FilmController films = new FilmController(new FilmRepo(provider));
         InventoryController inventory = new InventoryController(new InventoryRepo(provider));
@@ -224,4 +224,5 @@ public class Main {
                 System.out.println("Opcion Invalida! Seleccione una de las Existentes.");
         }
     }
+
 }
