@@ -7,7 +7,7 @@ public class ConnectionProvider {
     private final String user;
     private final String pass;
     public ConnectionProvider(String url, String user, String pass) {
-        this.url = /*url*/ /*"jdbc:mysql://localhost:3306/sakila/"*/"jdbc:mysql://localhost:3306/sakila?useSSL=false&serverTimezone=UTC";
+        this.url = /*url*/ "jdbc:mysql://localhost:3306/sakila?useSSL=false&serverTimezone=UTC";
         this.user = /*user*/ "Tu user";
         this.pass = /*pass*/ "Tu pass";
     }
@@ -20,3 +20,4 @@ public class ConnectionProvider {
         return DriverManager.getConnection(url/* + db*/, user, pass);
     }
 }
+
