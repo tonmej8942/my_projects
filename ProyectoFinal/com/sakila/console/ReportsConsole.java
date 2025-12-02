@@ -39,7 +39,7 @@ public class ReportsConsole {
      			basic.exportJson(inventory,
      			        i -> String.format("{\"inventory_id\":%d,\"film_id\":\"%d\",\"store_id\":%d}",
      			                i.inventory_id, sanitize(i.film_id), i.store_id), new java.io.File("inventory.json"));*/
-     			System.out.println("Se ha Exportado las Tablas!!!"); /*films.csv y films.json*/
+     			System.out.println("Se ha Exportado las Tablas!!!"); //Borrar comando comentario para opcion Guardar en JSON
      			break;
     	    case "b":
     	    	java.util.Map<String,Object> stats = basic.statsInventoryPerFilm();
@@ -63,29 +63,6 @@ public class ReportsConsole {
     	    	break;
     	}
 	}
-	/*private static String sanitize(String s) { return s == null ? "" : s.replace("\"","\\\""); }*/
+	/*private static String sanitize(String s) { return s == null ? "" : s.replace("\"","\\\""); }*/ //Parte del codigo Guardar JSON
 	/*private static Integer sanitize(Integer i) { return i == null ? "" : i.replace("\"","\\\""); }*/
 }
-
-/*case "a":
-	System.out.println("Exportando Tablas...");*/
-	/*exportAll(new FilmRepo(provider), "films", new String[]{"film_id","title","language_id"},
-f -> java.util.Arrays.asList(String.valueOf(((Film)f).film_id), ((Film)f).title, String.valueOf(((Film)f).language_id)));
-	exportAll(new ActorRepo(provider), "actors", new String[]{"actor_id","first_name","last_name"},
-a -> java.util.Arrays.asList(String.valueOf(((Actor)a).actor_id), ((Actor)a).first_name, ((Actor)a).last_name));
-	exportAll(new CustomerRepo(provider), "customers", new String[]{"customer_id","first_name","last_name","email"},
-c -> java.util.Arrays.asList(String.valueOf(((Customer)c).customer_id), ((Customer)c).first_name, ((Customer)c).last_name, ((Customer)c).email));
-	exportAll(new PaymentRepo(provider), "payments", new String[]{"payment_id","customer_id","amount","payment_date"},
-p -> java.util.Arrays.asList(String.valueOf(((Payment)p).payment_id), String.valueOf(((Payment)p).customer_id), String.valueOf(((Payment)p).amount), String.valueOf(((Payment)p).payment_date)));
-	exportAll(new RentalRepo(provider), "rentals", new String[]{"rental_id","customer_id","inventory_id","rental_date"},
-r -> java.util.Arrays.asList(String.valueOf(((Rental)r).rental_id), String.valueOf(((Rental)r).customer_id), String.valueOf(((Rental)r).inventory_id), String.valueOf(((Rental)r).rental_date)));
-	exportAll(new StoreRepo(provider), "stores", new String[]{"store_id","manager_staff_id","address_id"},
-s -> java.util.Arrays.asList(String.valueOf(((Store)s).store_id), String.valueOf(((Store)s).manager_staff_id), String.valueOf(((Store)s).address_id)));
-	exportAll(new AddressRepo(provider), "addresses", new String[]{"address_id","address","city_id","phone"},
-a -> java.util.Arrays.asList(String.valueOf(((Address)a).address_id), ((Address)a).address, String.valueOf(((Address)a).city_id), ((Address)a).phone));
-	exportAll(new CityRepo(provider), "cities", new String[]{"city_id","city","country_id"},
-c -> java.util.Arrays.asList(String.valueOf(((City)c).city_id), ((City)c).city, String.valueOf(((City)c).country_id)));
-	exportAll(new CountryRepo(provider), "countries", new String[]{"country_id","country"},
-c -> java.util.Arrays.asList(String.valueOf(((Country)c).country_id), ((Country)c).country));
-	System.out.println("Exportacion Completa!!!");
-	break;*/
