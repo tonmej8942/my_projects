@@ -13,31 +13,6 @@ public class ReportService {
         this.inventory = inventory;
         this.rentals = rentals;
     }
-    /*private static <T> void exportAll(
-	        DataContext<T, ?> repo,
-	        String filePrefix,
-	        String[] headers,
-	        java.util.function.Function<T, java.util.List<String>> mapper) {
-
-	    java.util.List<T> items = repo.getAll();
-
-	    // Exportar CSV
-	    ReportService.exportAll(items, headers, mapper, new java.io.File(filePrefix + ".csv"));
-
-	    // Exportar JSON
-	    ReportService.exportJson(items,
-	        t -> {
-	            StringBuilder sb = new StringBuilder("{");
-	            for (int i = 0; i < headers.length; i++) {
-	                String val = mapper.apply(t).get(i);
-	                sb.append("\"").append(headers[i]).append("\":\"").append(val).append("\"");
-	                if (i < headers.length - 1) sb.append(",");
-	            }
-	            sb.append("}");
-	            return sb.toString();
-	        },
-	        new java.io.File(filePrefix + ".json"));
-	}*/
     public <T> void exportCsv(List<T> data, String[] headers, ValueExtractor<T> extractor, File file) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(file))) {
             pw.println(String.join(",", headers));
@@ -136,4 +111,5 @@ public class ReportService {
     public interface ValueExtractor<T> { List<String> apply(T t); }
     @FunctionalInterface
     public interface JsonSerializer<T> { String toJson(T t); }
+
 }
