@@ -1,24 +1,19 @@
 #include <iostream>
-#include <limits>
+#include <string>
+
+using namespace std;
 
 int main() {
-    char nombre[30];
+    string nombre;
     int edad;
 
-    std::cout << "Introducir nombre: ";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    if (!std::cin.getline(nombre, sizeof(nombre))) {
-        std::cerr << "Error: nombre invalido!\n";
-        return 1;
-    }
+    cout << "Introducir nombre completo: ";
+    getline(cin, nombre);
 
-    std::cout << "Introducir edad: ";
-    if (!(std::cin >> edad)) {
-        std::cerr << "Error: edad invalida!\n";
-        return 1;
-    }
+    cout << "Introducir edad: ";
+    cin >> edad;
 
-    std::cout << "Hola \"" << nombre << "\", usted tiene \"" << edad << "\" años\n";
-    
+    cout << "Hola " << nombre << ", usted tiene " << edad << " años" << endl;
+
     return 0;
 }
