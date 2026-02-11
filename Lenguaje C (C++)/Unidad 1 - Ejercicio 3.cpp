@@ -13,7 +13,7 @@ int main() {
     cout << "Introducir edad: ";
     cin >> edad;
 
-    cout << "Hola " << nombre << ", usted tiene " << edad << " años" << endl;
+    cout << "Hola " << nombre << ", usted tiene " << edad << " years" << endl;
 
     return 0;
 }
